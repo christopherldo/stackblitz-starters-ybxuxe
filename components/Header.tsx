@@ -1,7 +1,7 @@
 import Avatar from "./Avatar";
 
 interface HeaderProps {
-  user: UserType | null;
+  user?: UserType;
 }
 
 export default function Header({ user }: HeaderProps) {

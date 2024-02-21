@@ -1,6 +1,6 @@
 type MessageType = {
   id: string;
-  user: Partial<UserType>;
+  user_id: string;
   time: Date;
   type: "sent" | "received";
   content: string;
