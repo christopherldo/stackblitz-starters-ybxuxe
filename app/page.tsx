@@ -9,7 +9,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex h-full w-full max-w-sm flex-col overflow-hidden rounded-lg border border-gray-200">
+    <div className="flex h-full w-full max-w-sm flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
       <div className="h-4 bg-[#272e3f]"></div>
       <div className="flex flex-1 flex-col">
         {data.map((user) => (

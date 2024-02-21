@@ -50,7 +50,7 @@ export default function UserChatPage({
   }, []);
 
   return (
-    <div className="flex h-full w-full max-w-sm flex-col overflow-hidden rounded-lg border border-gray-200">
+    <div className="flex h-full w-full max-w-sm flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
       {!loading && (
         <>
           <Header user={user} />
