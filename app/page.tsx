@@ -1,5 +1,6 @@
 "use client";
 
+import Header from "@/components/Header";
 import Message from "@/components/Message";
 import SendButton from "@/components/SendButton";
 import { messageData } from "@/data/db";
@@ -10,20 +11,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col w-full max-w-sm border border-gray-200 rounded-lg overflow-hidden">
-      <header className="flex items-center p-4 border-b">
-        <div className="flex items-center space-x-4">
-          <span className="relative flex shrink-0 overflow-hidden rounded-full w-8 h-8">
-            <img
-              alt="Logo"
-              height="40"
-              src="/logo.png"
-              style={{ aspectRatio: "40/40", objectFit: "cover" }}
-              width="40"
-            />
-          </span>
-          <h1 className="text-xl font-bold">Mateus Mendes</h1>
-        </div>
-      </header>
+      <Header />
       <div className="flex flex-col p-4 overflow-hidden">
         <Message message={messages[0]} />
         <Message message={messages[1]} />
@@ -41,6 +29,7 @@ export default function Home() {
           />
           <SendButton />
         </form>
+        H
       </div>
     </div>
   );
