@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import Header from "@/components/Header";
 import MessageForm from "@/components/MessageForm";
@@ -13,8 +14,11 @@ export default function UserChatPage({
 }: {
   params: { username: string };
 }) {
+  const router = useRouter();
+
   const [messages, setMessages] = useState<MessageType[]>([]);
   const [user, setUser] = useState<UserType>();
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const filterUserData = () => {
@@ -28,6 +32,9 @@ export default function UserChatPage({
           ...userData,
           username: params.username,
         });
+        setLoading(false);
+      } else {
+        router.replace("/");
       }
     };
 
@@ -43,10 +50,14 @@ export default function UserChatPage({
   }, []);
 
   return (
-    <div className="flex flex-col w-full max-w-sm border border-gray-200 rounded-lg overflow-hidden">
-      <Header user={user} />
-      <MessageList messages={messages} user={user} />
-      <MessageForm setMessages={setMessages} />
+    <div className="flex h-full w-full max-w-sm flex-col overflow-hidden rounded-lg border border-gray-200">
+      {!loading && (
+        <>
+          <Header user={user} />
+          <MessageList messages={messages} user={user} />
+          <MessageForm setMessages={setMessages} />
+        </>
+      )}
     </div>
   );
 }

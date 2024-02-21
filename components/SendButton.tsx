@@ -1,7 +1,7 @@
 export default function SendButton() {
   return (
     <button
-      className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-full w-10 h-10"
+      className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
       type="submit"
     >
       <svg
@@ -14,7 +14,7 @@ export default function SendButton() {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="w-4 h-4"
+        className="h-4 w-4"
       >
         <path d="m22 2-7 20-4-9-9-4Z" />
         <path d="M22 2 11 13" />

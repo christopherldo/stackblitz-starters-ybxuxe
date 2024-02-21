@@ -9,7 +9,7 @@ interface MessageFormProps {
 
 export default function MessageForm({ setMessages }: MessageFormProps) {
   return (
-    <form className="flex items-center gap-4 border-t p-4 mx-4">
+    <form className="mx-4 flex items-center gap-4 border-t p-4">
       <InputField />
       <SendButton />
     </form>

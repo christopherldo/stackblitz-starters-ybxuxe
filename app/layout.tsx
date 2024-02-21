@@ -16,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className="m-4 h-[476px]">{children}</main>
+      </body>
     </html>
   );
 }

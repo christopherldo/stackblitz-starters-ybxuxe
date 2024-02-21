@@ -7,7 +7,7 @@ interface MessageListProps {
 
 export default function MessageList({ messages, user }: MessageListProps) {
   return (
-    <div className="p-4">
+    <div className="flex-1 overflow-y-auto p-4">
       {messages.map((message) => (
         <Message key={message.id} message={message} user={user} />
       ))}
