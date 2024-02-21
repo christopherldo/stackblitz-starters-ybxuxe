@@ -1,4 +1,6 @@
+import { useEffect, useRef } from "react";
 import Image from "next/image";
+
 import Message from "./Message";
 
 interface MessageListProps {
@@ -7,8 +9,19 @@ interface MessageListProps {
 }
 
 export default function MessageList({ messages, user }: MessageListProps) {
+  const messageListRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const messageListDiv = messageListRef.current;
+
+    if (messageListDiv) messageListDiv.scrollTop = messageListDiv?.scrollHeight;
+  }, [messages]);
+
   return (
-    <div className="flex flex-1 flex-col overflow-y-auto p-4">
+    <div
+      className="flex flex-1 flex-col overflow-y-auto p-4"
+      ref={messageListRef}
+    >
       {messages.map((message) => (
         <Message key={message.id} message={message} user={user} />
       ))}
