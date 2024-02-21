@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "@/components/Header";
+import InputField from "@/components/InputField";
 import Message from "@/components/Message";
 import SendButton from "@/components/SendButton";
 import { messageData } from "@/data/db";
@@ -23,13 +24,9 @@ export default function Home() {
         <Message message={messages[1]} />
         <Message message={messages[2]} />
         <form className="flex items-center gap-4 border-t p-4">
-          <input
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1 min-w-0"
-            placeholder="Digite sua mensagem aqui..."
-          />
+          <InputField />
           <SendButton />
         </form>
-        H
       </div>
     </div>
   );
