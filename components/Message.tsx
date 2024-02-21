@@ -1,3 +1,5 @@
+import Avatar from "./Avatar";
+
 interface MessageProps {
   message: MessageType;
 }
@@ -11,13 +13,10 @@ export default function Message({ message }: MessageProps) {
     </div>
   ) : (
     <div className="flex items-center gap-4 my-2">
-      <img
-        alt="Avatar"
-        className="rounded-full"
-        height="30"
-        src="/logo.png"
-        style={{ aspectRatio: "40/40", objectFit: "cover" }}
-        width="30"
+      <Avatar
+        alt={message.user.name + " avatar."}
+        size="30"
+        src={message.user.avatar_url}
       />
       <div className="flex-1">
         <div className="rounded-lg border p-4 text-sm">{message.content}</div>
