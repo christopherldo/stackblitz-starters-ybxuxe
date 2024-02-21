@@ -14,15 +14,9 @@ export default function Home() {
     <div className="flex flex-col w-full max-w-sm border border-gray-200 rounded-lg overflow-hidden">
       <Header />
       <div className="flex flex-col p-4 overflow-hidden">
-        <Message message={messages[0]} />
-        <Message message={messages[1]} />
-        <Message message={messages[2]} />
-        <Message message={messages[0]} />
-        <Message message={messages[1]} />
-        <Message message={messages[2]} />
-        <Message message={messages[0]} />
-        <Message message={messages[1]} />
-        <Message message={messages[2]} />
+        {messages.map((message, index) => (
+          <Message key={index} message={message} />
+        ))}
         <form className="flex items-center gap-4 border-t p-4">
           <InputField />
           <SendButton />
