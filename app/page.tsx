@@ -10,7 +10,9 @@ export default function Home() {
 
   return (
     <div className="flex h-full w-full max-w-sm flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
-      <div className="h-4 bg-[#272e3f]"></div>
+      <div className="flex h-14 items-center justify-center bg-[#272e3f]">
+        <h1 className="font-bold text-white">Chatbot Control</h1>
+      </div>
       <div className="flex flex-1 flex-col">
         {data.map((user) => (
           <ChatButton key={user.id} user={user} />
