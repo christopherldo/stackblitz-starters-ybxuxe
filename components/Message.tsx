@@ -14,7 +14,7 @@ export default function Message({ message }: MessageProps) {
   ) : (
     <div className="flex items-center gap-4 my-2">
       <Avatar
-        alt={message.user.name + " avatar."}
+        alt={`${message.user.name} avatar.`}
         size="30"
         src={message.user.avatar_url}
       />

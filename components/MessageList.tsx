@@ -1,13 +1,15 @@
-"use client";
-
-import { messageData } from "@/data/db";
-import { useState } from "react";
 import Message from "./Message";
 
-export default function MessageList() {
-  const [messages, setMessages] = useState<MessageType[]>([...messageData]);
+interface MessageListProps {
+  messages: MessageType[];
+}
 
-  return messages.map((message, index) => (
-    <Message key={index} message={message} />
-  ));
+export default function MessageList({ messages }: MessageListProps) {
+  return (
+    <div className="p-4">
+      {messages.map((message) => (
+        <Message key={message.id} message={message} />
+      ))}
+    </div>
+  );
 }
