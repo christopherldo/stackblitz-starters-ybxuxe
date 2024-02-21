@@ -20,6 +20,19 @@ export default function UserChatPage({
   const [user, setUser] = useState<UserType>();
   const [loading, setLoading] = useState<boolean>(true);
 
+  const sendMessage = (message: string) => {
+    setMessages([
+      ...messages,
+      {
+        id: crypto.randomUUID(),
+        user_id: "7552da7f-ae25-46ff-a1eb-baa0fa3270fd",
+        time: new Date(),
+        type: "sent",
+        content: message,
+      },
+    ]);
+  };
+
   useEffect(() => {
     const filterUserData = () => {
       const userData = usersData[params.username];
@@ -55,7 +68,7 @@ export default function UserChatPage({
         <>
           <Header user={user} />
           <MessageList messages={messages} user={user} />
-          <MessageForm setMessages={setMessages} />
+          <MessageForm sendMessage={sendMessage} />
         </>
       )}
     </div>
