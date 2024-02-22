@@ -34,7 +34,7 @@ export const usersData: UsersDataType = {
     messages: [],
     id: "611168d5-d356-4113-9d27-324ba99082bc",
     name: "Christopher de Oliveira",
-    avatar_url: "/images/avatars/christopherldo.jpg",
+    avatar_url: "/images/avatars/christopherldo.png",
   },
   gabriel_silva: {
     messages: [],
