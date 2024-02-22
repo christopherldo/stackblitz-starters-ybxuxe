@@ -18,7 +18,7 @@ export default function Header({ user }: HeaderProps) {
           <span className="relative flex h-8 w-8 shrink-0 overflow-hidden rounded-full">
             <Avatar
               alt={`${user?.name} avatar.`}
-              size="40"
+              size={40}
               src={user?.avatar_url}
             />
           </span>
