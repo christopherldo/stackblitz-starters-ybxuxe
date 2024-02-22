@@ -14,7 +14,7 @@ describe("Avatar", () => {
 
     const imgElement = getByAltText(mockAlt);
 
-    expect(imgElement).toBeDefined();
+    expect(imgElement).toBeInTheDocument();
     expect(imgElement.getAttribute("src")).toBeDefined();
     expect(imgElement.getAttribute("src")).toContain(
       encodeURIComponent(mockSrc),
@@ -86,6 +86,6 @@ describe("Avatar", () => {
 
     fireEvent.error(imgElement);
 
-    expect(imgElement).toBeDefined();
+    expect(imgElement).toBeInTheDocument();
   });
 });
