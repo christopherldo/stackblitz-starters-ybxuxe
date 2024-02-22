@@ -3,11 +3,13 @@ import { Dispatch, SetStateAction } from "react";
 interface InputFieldProps {
   inputMessage: string;
   setInputMessage: Dispatch<SetStateAction<string>>;
+  onKeyDown: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
 }
 
 export default function InputField({
   inputMessage,
   setInputMessage,
+  onKeyDown,
 }: InputFieldProps) {
   return (
     <textarea
@@ -15,6 +17,7 @@ export default function InputField({
       placeholder="Digite sua mensagem aqui..."
       value={inputMessage}
       onChange={(e) => setInputMessage(e.target.value)}
+      onKeyDown={onKeyDown}
     />
   );
 }

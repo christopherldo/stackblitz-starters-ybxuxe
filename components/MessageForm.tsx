@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 
 import InputField from "./InputField";
 import SendButton from "./SendButton";
@@ -10,11 +10,18 @@ interface MessageFormProps {
 export default function MessageForm({ sendMessage }: MessageFormProps) {
   const [inputMessage, setInputMessage] = useState<string>("");
 
-  const handleSubmitMessage = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmitMessage = (e?: React.FormEvent<HTMLFormElement>) => {
+    e?.preventDefault();
 
-    if (inputMessage) sendMessage(inputMessage);
+    if (inputMessage.trim()) sendMessage(inputMessage.trim());
     setInputMessage("");
+  };
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key == "Enter" && e.shiftKey == false) {
+      e.preventDefault();
+      handleSubmitMessage();
+    }
   };
 
   return (
@@ -25,6 +32,7 @@ export default function MessageForm({ sendMessage }: MessageFormProps) {
       <InputField
         inputMessage={inputMessage}
         setInputMessage={setInputMessage}
+        onKeyDown={onKeyDown}
       />
       <SendButton />
     </form>
