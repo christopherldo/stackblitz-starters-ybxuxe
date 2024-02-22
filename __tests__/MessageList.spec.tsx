@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import MessageList from "./MessageList";
+import MessageList from "@/components/MessageList";
 
 describe("MessageList", () => {
   const mockMessages = [

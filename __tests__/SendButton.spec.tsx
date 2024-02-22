@@ -1,5 +1,5 @@
 import { render, fireEvent } from "@testing-library/react";
-import SendButton from "./SendButton";
+import SendButton from "@/components/SendButton";
 
 describe("SendButton", () => {
   it("calls form onSubmit when clicked", () => {

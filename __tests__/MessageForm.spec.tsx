@@ -1,5 +1,5 @@
 import { render, fireEvent } from "@testing-library/react";
-import MessageForm from "./MessageForm";
+import MessageForm from "@/components/MessageForm";
 
 describe("MessageForm", () => {
   const mockSendMessage = jest.fn();

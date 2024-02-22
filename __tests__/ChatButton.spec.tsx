@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import ChatButton from "./ChatButton";
+import ChatButton from "@/components/ChatButton";
 
 describe("ChatButton", () => {
   const user = {

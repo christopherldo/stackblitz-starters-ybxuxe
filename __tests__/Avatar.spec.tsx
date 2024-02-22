@@ -1,5 +1,5 @@
 import { fireEvent, render } from "@testing-library/react";
-import Avatar from "./Avatar";
+import Avatar from "@/components/Avatar";
 
 describe("Avatar", () => {
   const mockSrc = "/images/avatars/default.jpg";

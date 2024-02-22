@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import Message from "./Message";
+import { render } from "@testing-library/react";
+import Message from "@/components/Message";
 
 describe("Message", () => {
   const mockMessageSent = {
